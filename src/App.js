@@ -1,26 +1,23 @@
-import { useState } from "react";
-import "./App.css";
+import React, {useRef, useState } from"react";
 
-function App() {
-
-  // TODO 1:
-  // Create a state variable named isLoggedIn.
-  // Initial value should be false.
-
-
-  // TODO 2:
-  // Use a ternary operator to display:
-  //
-  // If logged in:
-  //     Welcome Student
-  //
-  // Otherwise:
-  //     Login button
-  //
-  // The Login button should use onClick
-  // to change the login state.
-
-
+function App() 
+{
+const [state, setState]=useState(false);
+const inputRef=useRef();
+const focusInput=()=>{
+inputRef.current.focus();
+};
+return(
+  <>
+  <h1>Welcome {state}</h1>
+  <form>
+<input type="text" ref={inputRef}
+type ="text" Placeholder ="Enter your name"/>
+  <button onClick={focusInput}>
+Login
+  </button>
+  </form>
+  </>
+);
 }
-
 export default App;
